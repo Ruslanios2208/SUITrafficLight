@@ -41,6 +41,8 @@ struct ContentView: View {
                         Color(.systemBlue)
                             .frame(width: 150, height: 50)
                             .cornerRadius(10)
+                            .overlay(RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.white, lineWidth: 3))
                         Text(startButtonText)
                             .foregroundColor(.white)
                             .font(.title)
