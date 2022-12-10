@@ -11,6 +11,7 @@
 		E499E7AD2944837C0097371C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499E7AC2944837C0097371C /* ContentView.swift */; };
 		E499E7AF2944837D0097371C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E499E7AE2944837D0097371C /* Assets.xcassets */; };
 		E499E7B22944837D0097371C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E499E7B12944837D0097371C /* Preview Assets.xcassets */; };
+		E4AD11EB29448E9500B55C12 /* ColorCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AD11EA29448E9500B55C12 /* ColorCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		E499E7AC2944837C0097371C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E499E7AE2944837D0097371C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E499E7B12944837D0097371C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E4AD11EA29448E9500B55C12 /* ColorCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				E499E7AA2944837B0097371C /* SUITrafficLightApp.swift */,
 				E499E7AC2944837C0097371C /* ContentView.swift */,
+				E4AD11EA29448E9500B55C12 /* ColorCircleView.swift */,
 				E499E7AE2944837D0097371C /* Assets.xcassets */,
 				E499E7B02944837D0097371C /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4AD11EB29448E9500B55C12 /* ColorCircleView.swift in Sources */,
 				E499E7AD2944837C0097371C /* ContentView.swift in Sources */,
 				E499E7AB2944837B0097371C /* SUITrafficLightApp.swift in Sources */,
 			);
