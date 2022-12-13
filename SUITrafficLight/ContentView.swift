@@ -7,78 +7,67 @@
 
 import SwiftUI
 
+enum CurrentLight {
+    case red, yellow, green
+}
+
 struct ContentView: View {
     @State private var startButtonText = "START"
     @State private var currentLight = CurrentLight.red
-    
-    static let lightIsOn = 1.0
-    static let lightIsOff = 0.3
-    
-    @State private var redCircleOpacity = lightIsOff
-    @State private var yellowCircleOpacity = lightIsOff
-    @State private var greenCircleOpacity = lightIsOff
+
+    @State private var redCircleOpacity = 0.3
+    @State private var yellowCircleOpacity = 0.3
+    @State private var greenCircleOpacity = 0.3
 
     var body: some View {
         ZStack {
             Color(.black)
-            VStack {
-                ColorCircleView(
-                    color: .red,
-                    opacity: redCircleOpacity
-                )
-                ColorCircleView(
-                    color: .yellow,
-                    opacity: yellowCircleOpacity
-                )
-                    .padding()
-                ColorCircleView(
-                    color: .green,
-                    opacity: greenCircleOpacity
-                )
+                .ignoresSafeArea()
+            
+            VStack(spacing: 20) {
+                ColorCircleView(color: .red, opacity: redCircleOpacity)
+                ColorCircleView(color: .yellow, opacity: yellowCircleOpacity)
+                ColorCircleView(color: .green, opacity: greenCircleOpacity)
+                
                 Spacer()
+                
                 Button(action: startButtonPressed) {
-                    ZStack {
-                        Color(.systemBlue)
-                            .frame(width: 150, height: 50)
-                            .cornerRadius(10)
-                            .overlay(RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.white, lineWidth: 3))
-                        Text(startButtonText)
-                            .foregroundColor(.white)
-                            .font(.title)
-                    }
+                    Text(startButtonText)
+                        .foregroundColor(.white)
+                        .font(.title)
                 }
+                .frame(width: 150, height: 50)
+                .background(.blue)
+                .cornerRadius(10)
+                .overlay(RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.white, lineWidth: 3))
             }
-            .padding(EdgeInsets(top: 56, leading: 0, bottom: 56, trailing: 0))
+            .padding()
         }
-        .ignoresSafeArea()
     }
     
     private func startButtonPressed() {
-        if startButtonText == "START" {
-            startButtonText = "NEXT"
-        }
+        let lightIsOn = 1.0
+        let lightIsOff = 0.3
         
         switch currentLight {
         case .red:
-            greenCircleOpacity = ContentView.lightIsOff
-            redCircleOpacity = ContentView.lightIsOn
+            greenCircleOpacity = lightIsOff
+            redCircleOpacity = lightIsOn
             currentLight = .yellow
         case .yellow:
-            redCircleOpacity = ContentView.lightIsOff
-            yellowCircleOpacity = ContentView.lightIsOn
+            redCircleOpacity = lightIsOff
+            yellowCircleOpacity = lightIsOn
             currentLight = .green
         case .green:
-            yellowCircleOpacity = ContentView.lightIsOff
-            greenCircleOpacity = ContentView.lightIsOn
+            yellowCircleOpacity = lightIsOff
+            greenCircleOpacity = lightIsOn
             currentLight = .red
         }
-    }
-}
-
-extension ContentView {
-    private enum CurrentLight {
-        case red, yellow, green
+        
+        if startButtonText == "START" {
+            startButtonText = "NEXT"
+        }
     }
 }
 
